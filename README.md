@@ -33,4 +33,4 @@ Welcome to **Classroom 60X**, a collection of web-based games and an emulator de
 ## How to Deploy Locally  
 1. Clone this repository:  
    ```sh
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/williptq/your-repo.git
