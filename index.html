@@ -1,32 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unblocked Games</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom 60X</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: black;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .search-bar {
+      width: 80%;
+      padding: 10px;
+      font-family: 'Press Start 2P', cursive;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      margin: 20px auto;
+      display: block;
+    }
+    .emulator-button {
+      font-family: 'Press Start 2P', cursive;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+    #emulator {
+      display: none;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+    }
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .game {
+      background-color: black;
+      padding: 15px;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+    }
+    .game:hover {
+      transform: scale(1.1);
+    }
+    .game img {
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Unblocked Games</h1>
-    <p>Play fun games without restrictions!</p>
-  </header>
-
-  <section class="games-list">
-    <h2>Available Games</h2>
-    <div class="game-card">
-      <a href="https://example.com/game1" target="_blank">
-        <img src="game1-thumbnail.jpg" alt="Game 1">
-        <h3>Game 1</h3>
-      </a>
-    </div>
-    <div class="game-card">
-      <a href="https://example.com/game2" target="_blank">
-        <img src="game2-thumbnail.jpg" alt="Game 2">
-        <h3>Game 2</h3>
-      </a>
-    </div>
-    <!-- Add more games here -->
-  </section>
-
-  <
+  <h1>Classroom 60X</h1>
+  <input type="text" class="search-bar" placeholder="Search..." />
+  <button class="emulator-button" onclick="toggleEmulator()">Emulator</button>
+  <div id="emulator">
+    <p>Drag and Drop Your File Here</p>
+    <input type="file" />
+  </div>
+  <div class="game-container">
+    <!-- 1. BitLife -->
+    <a href="https://class-911.github.io/files/BitLife/index.html" class="game" target="_blank">
+      <img src="https://i.postimg.cc/c1jhS18w/IMG-8366.jpg" alt="BitLife" />
+    </a>
+    <!-- 2. Funny Shooter 2 -->
+    <a href="https://class-911.github.io/files/FunnyShooter2/index.html" class="game" target="_blank">
+      <img src="https://i.postimg.cc/6pVfndbf/IMG-8367.jpg" alt="Funny Shooter 2" />
+    </a>
+    <!-- 3. Subway Surfers -->
+    <a href="https://dddavit.github.io/subway/" class="game" target="_blank">
+      <img src="https://i.postimg.cc/sDhcDFp8/IMG-8368.jpg" alt="Subway Surfers" />
+    </a>
+    <!-- 4. Carnage3D (Carnage3D_wasm) --> 
+    <a href="https://codenamecpp.github.io/carnage3d/web/carnage3D_wasm.html" class="game" target="_blank">
+      <img src="https://i.postimg.cc/bvzHTsKc/IMG-8369.jpg" alt="Carnage3D" />
+    </a>
+    <!-- 5. Geometry Dash --> 
+    <a href="https://class-911.github.io/files/GeometryDash/index.html" class="game" target="_blank">
+      <img src="https://i.postimg.cc/wjYk1W2B/IMG-8370.jpg" alt="Geometry Dash" />
+    </a>
+    <!-- 6. Stickman Climb 2 --> 
+    <a href="https://minibattles.github.io/play/stickman-climb-2" class="game" target="_blank">
+      <img src="https://i.postimg.cc/76h3FjHK/IMG-8372.jpg" alt="Stickman Climb 2" />
+    </a>
+    <!-- 7. Minecraft --> 
+    <a href="https://sd592g.github.io/zj684od4lfg/" class="game" target="_blank">
+      <img src="https://i.postimg.cc/j51HtvCt/IMG-8373.jpg" alt="Minecraft" />
+    </a>
+    <!-- 8. Retro Bowl --> 
+    <a href="https://ethonion10.neocities.org" class="game" target="_blank">
+      <img src="https://i.postimg.cc/Pq2bFdjL/IMG-8374.jpg" alt="Retro Bowl" />
+    </a>
+    <!-- 9. Cookie Clicker --> 
+    <a href="https://cyrillbrito.github.io/cookieclicker/" class="game" target="_blank">
+      <img src="https://i.postimg.cc/kD3Wt4xH/IMG-8375.jpg" alt="Cookie Clicker" />
+    </a>
+    <!-- 10. Rocket Soccer Derby --> 
+    <a href="https://forces.github.io/play/rocket-soccer-derby.html" class="game" target="_blank">
+      <img src="https://i.postimg.cc/mZcqM5Y3/IMG-8376.jpg" alt="Rocket Soccer Derby" />
+    </a>
+    <!-- 11. Fortnite --> 
+    <a href="https://www.xbox.com/en-US/play/games/fortnite/BT5P2X999VH2" class="game" target="_blank">
+      <img src="https://i.postimg.cc/v8pKvthJ/IMG-8377.jpg" alt="Fortnite" />
+    </a>
+    <!-- 12. Retro Bowl (alternative) --> 
+    <a href="https://reverent-curran-3bfc19.netlify.app/" class="game" target="_blank">
+      <img src="https://i.postimg.cc/BQHV7PwX/IMG-8378.jpg" alt="Retro Bowl" />
+    </a>
+    <!-- 13. Basket Random --> 
+    <a href="https://911.github.io/files/BasketRandom/index.html" class="game" target="_blank">
+      <img src="https://i.postimg.cc/Xv71vHNC/IMG-8383.png" alt="Basket Random" />
+    </a>
+    <!-- 14. Ovo --> 
+    <a href="https://ovo-game.github.io/" class="game" target="_blank">
+      <img src="https://i.postimg.cc/QdqnhGDD/IMG-8384.png" alt="Ovo" />
+    </a>
+    <!-- 15. 1v1 LOL --> 
+    <a href="https://class-911.github.io/files/1v1lol/index.html" class="game" target="_blank">
+      <img src="https://i.postimg.cc/R0HMG5Dc/IMG-8371.jpg" alt="1v1 LOL" />
+    </a>
+  </div>
+  <script>
+    function toggleEmulator() {
+      var emulator = document.getElementById('emulator');
+      emulator.style.display = (emulator.style.display === 'none' || emulator.style.display === '') ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
