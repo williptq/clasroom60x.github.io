@@ -1,4 +1,4 @@
-# Classroom 60X  
+# Classroom 70x  
 
 Welcome to **Classroom 70x**, a collection of web-based games and an emulator designed for easy access and entertainment.  
 
