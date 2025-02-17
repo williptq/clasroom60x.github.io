@@ -1,6 +1,6 @@
 # Classroom 60X  
 
-Welcome to **Classroom 60X**, a collection of web-based games and an emulator designed for easy access and entertainment.  
+Welcome to **Classroom 70x**, a collection of web-based games and an emulator designed for easy access and entertainment.  
 
 ## Features  
 - A variety of unblocked games available for instant play.  
