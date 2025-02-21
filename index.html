@@ -1,1 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom 70X</title>
+  <!-- Default favicon set to Home logo -->
+  <link id="favicon" rel="icon" href="https://i.postimg.cc/ppSfsBPB/IMG-8407.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <style>
+    /* General Styles and Custom Cursor */
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      /* Set custom cursor – replace with a direct image URL if necessary */
+      cursor: url('https://postimg.cc/rKXvn2yj'), auto;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: black;
+      padding: 10px;
+      border-bottom: 2px solid white;
+    }
+    .navbar button {
+      background: black;
+      border: 2px solid white;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+    }
+    /* Settings Panel for Tab Cloak */
+    .settings-panel {
+      display: none;
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background: black;
+      border: 2px solid white;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+    .settings-panel img {
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      cursor: pointer;
+      border: 2px solid white;
+      border-radius: 5px;
+    }
+    /* Search Bar */
+    .search-container {
+      margin: 20px auto;
+    }
+    .search-bar {
+      width: 80%;
+      padding: 10px;
+      font-family: 'Press Start 2P', cursive;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      text-align: center;
+    }
+    /* Emulator Button & Container */
+    .emulator-button {
+      font-family: 'Press Start 2P', cursive;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+    .emulator-container {
+      display: none;
+      background-color: black;
+      border: 2px solid white;
+      padding: 20px;
+      width: 80%;
+      margin: 20px auto;
+      font-family: 'Press Start 2P', cursive;
+    }
+    /* Game Grid */
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .game {
+      background-color: grey;
+      padding: 15px;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .game:hover {
+      transform: scale(1.1);
+    }
+    .game img {
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+    /* Modal for Embedded Game */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal iframe {
+      width: 80%;
+      height: 80%;
+      border: none;
+    }
+    .modal button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: black;
+      border: 2px solid white;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    /* IO Games Summary Section */
+    .summary {
+      background: black;
+      border-top: 2px solid white;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <button onclick="resetTabCloak()">Home</button>
+    <h1>Classroom 70X</h1>
+    <button onclick="toggleSettings()">Settings</button>
+  </div>
+  
+  <!-- Settings Panel for Tab Cloak -->
+  <div id="settingsPanel" class="settings-panel">
+    <p>Select Tab Cloak:</p>
+    <img src="https://i.postimg.cc/ppSfsBPB/IMG-8407.png" alt="Option 1" onclick="setTabCloak('Classroom 70X', 'https://i.postimg.cc/ppSfsBPB/IMG-8407.png')" />
+    <img src="https://i.postimg.cc/yDSFtSdC/IMG-8408.png" alt="Option 2" onclick="setTabCloak('Classroom 70X - Clever', 'https://i.postimg.cc/yDSFtSdC/IMG-8408.png')" />
+    <img src="https://i.postimg.cc/zLCTXZKd/IMG-8409.png" alt="Option 3" onclick="setTabCloak('Classroom 70X - Smart', 'https://i.postimg.cc/zLCTXZKd/IMG-8409.png')" />
+    <img src="https://i.postimg.cc/wy9L1fk9/IMG-8410.png" alt="Option 4" onclick="setTabCloak('Classroom 70X - Elite', 'https://i.postimg.cc/wy9L1fk9/IMG-8410.png')" />
+    <!-- Additional Name Cloaks (example logos) -->  
+    <p>Additional Cloaks:</p>  
+    <img src="https://via.placeholder.com/50?text=GC" alt="Google Classroom" onclick="setTabCloak('Google Classroom', 'https://via.placeholder.com/50?text=GC')" />  
+    <img src="https://via.placeholder.com/50?text=GD" alt="Google Drive" onclick="setTabCloak('Google Drive', 'https://via.placeholder.com/50?text=GD')" />  
+    <img src="https://via.placeholder.com/50?text=Clever" alt="Clever" onclick="setTabCloak('Clever', 'https://via.placeholder.com/50?text=Clever')" />  
+  </div>
+  
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Search for a game..." onkeyup="filterGames()" />
+  </div>
+  
+  <!-- Emulator Button and Container -->
+  <button class="emulator-button" onclick="toggleEmulator()">Emulator</button>
+  <div id="emulator" class="emulator-container">
+    <p>Drag and Drop Your File Here</p>
+    <input type="file" />
+  </div>
+  
+  <!-- Unblocked Button and Container -->
+  <button class="emulator-button" onclick="toggleUnblocked()">Unblocked</button>
+  <div id="unblocked" class="emulator-container">
+    <p>Embedded Unblocked Site:</p>
+    <iframe src="https://p.bestbfs.org" style="width:100%; height:400px;"></iframe>
+  </div>
+  
+  <!-- Game Container -->
+  <div class="game-container" id="gameContainer">
+    <!-- 1. BitLife -->  
+    <div class="game" data-name="bitlife" onclick="openGame('https://class-911.github.io/files/BitLife/index.html')">
+      <img src="https://i.postimg.cc/c1jhS18w/IMG-8366.jpg" alt="BitLife" />
+    </div>
+    <!-- 2. Funny Shooter 2 -->  
+    <div class="game" data-name="funnyshooter2" onclick="openGame('https://class-911.github.io/files/FunnyShooter2/index.html')">
+      <img src="https://i.postimg.cc/6pVfndbf/IMG-8367.jpg" alt="Funny Shooter 2" />
+    </div>
+    <!-- 3. Subway Surfers -->  
+    <div class="game" data-name="subwaysurfers" onclick="openGame('https://dddavit.github.io/subway/')">
+      <img src="https://i.postimg.cc/sDhcDFp8/IMG-8368.jpg" alt="Subway Surfers" />
+    </div>
+    <!-- 4. Carnage3D -->  
+    <div class="game" data-name="carnage3d" onclick="openGame('https://codenamecpp.github.io/carnage3d/web/carnage3D_wasm.html')">
+      <img src="https://i.postimg.cc/bvzHTsKc/IMG-8369.jpg" alt="Carnage3D" />
+    </div>
+    <!-- 5. Geometry Dash -->  
+    <div class="game" data-name="geometrydash" onclick="openGame('https://class-911.github.io/files/GeometryDash/index.html')">
+      <img src="https://i.postimg.cc/wjYk1W2B/IMG-8370.jpg" alt="Geometry Dash" />
+    </div>
+    <!-- 6. Stickman Climb 2 -->  
+    <div class="game" data-name="stickmanclimb2" onclick="openGame('https://minibattles.github.io/play/stickman-climb-2')">
+      <img src="https://i.postimg.cc/76h3FjHK/IMG-8372.jpg" alt="Stickman Climb 2" />
+    </div>
+    <!-- 7. Minecraft -->  
+    <div class="game" data-name="minecraft" onclick="openGame('https://minecraftunblocked.gitlab.io')">
+      <img src="https://i.postimg.cc/j51HtvCt/IMG-8373.jpg" alt="Minecraft" />
+    </div>
+    <!-- 8. Retro Bowl -->  
+    <div class="game" data-name="retrobowl" onclick="openGame('https://class-911.github.io/files/RetroBowl/index.html')">
+      <img src="https://i.postimg.cc/Pq2bFdjL/IMG-8374.jpg" alt="Retro Bowl" />
+    </div>
+    <!-- 9. Cookie Clicker -->  
+    <div class="game" data-name="cookieclicker" onclick="openGame('https://class-911.github.io/files/CookieClicker/index.html')">
+      <img src="https://i.postimg.cc/kD3Wt4xH/IMG-8375.jpg" alt="Cookie Clicker" />
+    </div>
+    <!-- 10. Rocket Soccer Derby -->  
+    <div class="game" data-name="rocketsoccer" onclick="openGame('https://forces.github.io/play/rocket-soccer-derby.html')">
+      <img src="https://i.postimg.cc/mZcqM5Y3/IMG-8376.jpg" alt="Rocket Soccer Derby" />
+    </div>
+    <!-- 11. Fortnite -->  
+    <div class="game" data-name="fortnite" onclick="openGame('https://www.xbox.com/en-US/play/games/fortnite/BT5P2X999VH2')">
+      <img src="https://i.postimg.cc/v8pKvthJ/IMG-8377.jpg" alt="Fortnite" />
+    </div>
+    <!-- 12. Retro Bowl (Alternative) -->  
+    <div class="game" data-name="retrobowlalt" onclick="openGame('https://reverent-curran-3bfc19.netlify.app/')">
+      <img src="https://i.postimg.cc/BQHV7PwX/IMG-8378.jpg" alt="Retro Bowl Alternative" />
+    </div>
+    <!-- 13. Basket Random -->  
+    <div class="game" data-name="basketrandom" onclick="openGame('https://class-911.github.io/files/BasketRandom/index.html')">
+      <img src="https://i.postimg.cc/Xv71vHNC/IMG-8383.png" alt="Basket Random" />
+    </div>
+    <!-- 14. Ovo -->  
+    <div class="game" data-name="ovo" onclick="openGame('https://ovo-game.github.io/')">
+      <img src="https://i.postimg.cc/QdqnhGDD/IMG-8384.png" alt="Ovo" />
+    </div>
+    <!-- 15. 1v1 LOL -->  
+    <div class="game" data-name="1v1lol" onclick="openGame('https://class-911.github.io/files/1v1lol/index.html')">
+      <img src="https://i.postimg.cc/R0HMG5Dc/IMG-8371.jpg" alt="1v1 LOL" />
+    </div>
+    <!-- 16. Doom Sokol -->  
+    <div class="game" data-name="doomsokol" onclick="openGame('https://floooh.github.io/doom-sokol/')">
+      <img src="https://i.postimg.cc/94QXDckg/IMG-8413.jpg" alt="Doom Sokol" />
+    </div>
+    <!-- 17. Time Shooter 3 - SWAT -->  
+    <div class="game" data-name="timeshooter3" onclick="openGame('https://laparda14.github.io/Time-Shooter-3-SWAT/')">
+      <img src="https://i.postimg.cc/SJcx5T8d/IMG-8415.jpg" alt="Time Shooter 3 - SWAT" />
+    </div>
+    <!-- 18. Super Mario 64 -->  
+    <div class="game" data-name="supermario64" onclick="openGame('https://class-911.github.io/files/SuperMario64/index.html')">
+      <img src="https://i.postimg.cc/kD05T3VD/IMG-8416.jpg" alt="Super Mario 64" />
+    </div>
+    <!-- 19. Friday Night Funkin' -->  
+    <div class="game" data-name="fridaynightfunkin" onclick="openGame('https://class-911.github.io/files/FridayNightFunkin/index.html')">
+      <img src="https://i.postimg.cc/XXGJK7YT/IMG-8417.jpg" alt="Friday Night Funkin'" />
+    </div>
+    <!-- 20. Slope -->  
+    <div class="game" data-name="slope" onclick="openGame('https://class-911.github.io/files/Slope/index.html')">
+      <img src="https://i.postimg.cc/p5FLPkS2/IMG-8418.jpg" alt="Slope" />
+    </div>
+    <!-- 21. Diablo Web -->  
+    <div class="game" data-name="diabloweb" onclick="openGame('https://d07riv.github.io/diabloweb/')">
+      <img src="https://i.postimg.cc/jwCjFRQn/IMG-8419.jpg" alt="Diablo Web" />
+    </div>
+    <!-- 22. Scratch Project -->  
+    <div class="game" data-name="scratch" onclick="openGame('https://scratch.mit.edu/projects/508340998/fullscreen/')">
+      <img src="https://i.postimg.cc/sBTXmMSR/IMG-8420.jpg" alt="Scratch Project" />
+    </div>
+    <!-- 23. Five Nights at Freddy's Web -->  
+    <div class="game" data-name="fnaf" onclick="openGame('https://wellsousaaa.github.io/Five-Nights-at-Freddys-Web/')">
+      <img src="https://i.postimg.cc/N9V0hZpJ/IMG-8423.jpg" alt="FNAF Web" />
+    </div>
+    <!-- 24. BasketStars -->  
+    <div class="game" data-name="basketstars" onclick="openGame('https://class-911.github.io/files/BasketStars/index.html')">
+      <img src="https://i.postimg.cc/XZjq9fr8/IMG-8424.jpg" alt="BasketStars" />
+    </div>
+  </div>
+  
+  <!-- Modal for Embedded Game -->  
+  <div id="gameModal" class="modal">
+    <button onclick="closeModal()">Close</button>
+    <iframe id="gameFrame" src=""></iframe>
+  </div>
+  
+  <!-- IO Games Summary Section -->  
+  <div class="summary">
+    <p>
+      IO games have revolutionized online gaming by offering fast, accessible, and highly competitive multiplayer experiences. Their minimalist design and real-time interaction have attracted millions of players worldwide, influencing modern casual gaming and fostering vibrant online communities that continue to shape the future of multiplayer entertainment.
+    </p>
+  </div>
+  
+  <script>
+    // Toggle Emulator Container
+    function toggleEmulator() {
+      var emulator = document.getElementById('emulator');
+      emulator.style.display = (emulator.style.display === 'none' || emulator.style.display === '') ? 'block' : 'none';
+    }
+    
+    // Toggle Unblocked Container
+    function toggleUnblocked() {
+      var unblocked = document.getElementById('unblocked');
+      unblocked.style.display = (unblocked.style.display === 'none' || unblocked.style.display === '') ? 'block' : 'none';
+    }
+    
+    // Open Embedded Game in Modal
+    function openGame(url) {
+      var modal = document.getElementById('gameModal');
+      var iframe = document.getElementById('gameFrame');
+      iframe.src = url;
+      modal.style.display = 'flex';
+    }
+    
+    function closeModal() {
+      var modal = document.getElementById('gameModal');
+      modal.style.display = 'none';
+      document.getElementById('gameFrame').src = '';
+    }
+    
+    // Filter Games based on Search Input
+    function filterGames() {
+      let input = document.getElementById('searchBar').value.toLowerCase();
+      let games = document.querySelectorAll('.game');
+      games.forEach(game => {
+        let name = game.getAttribute('data-name');
+        if (name.includes(input)) {
+          game.style.display = 'flex';
+        } else {
+          game.style.display = 'none';
+        }
+      });
+    }
+    
+    // Attach search event listener
+    document.getElementById('searchBar').addEventListener('keyup', filterGames);
+    
+    // Settings Panel for Tab Cloak Functions
+    function toggleSettings() {
+      var panel = document.getElementById('settingsPanel');
+      panel.style.display = (panel.style.display === 'none' || panel.style.display === '') ? 'block' : 'none';
+    }
+    function setTabCloak(title, iconUrl) {
+      document.title = title;
+      var favicon = document.getElementById('favicon');
+      if (!favicon) {
+        favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.id = 'favicon';
+        document.head.appendChild(favicon);
+      }
+      favicon.href = iconUrl;
+      toggleSettings();
+    }
+    function resetTabCloak() {
+      document.title = 'Classroom 70X';
+      setTabCloak('Classroom 70X', 'https://i.postimg.cc/ppSfsBPB/IMG-8407.png');
+    }
+  </script>
+</body>
+</html>
 
