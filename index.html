@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,7 @@
       cursor: pointer;
       font-family: 'Press Start 2P', cursive;
     }
-    /* Settings Panel for Tab Cloak */
+    /* Settings Panel for Tab Cloak + Extra Options */
     .settings-panel {
       display: none;
       position: fixed;
@@ -71,7 +72,7 @@
       text-align: center;
     }
     /* Emulator Button & Container */
-    .emulator-button {
+    .emulator-button, .unblocked-button {
       font-family: 'Press Start 2P', cursive;
       background-color: black;
       color: white;
@@ -81,7 +82,7 @@
       margin: 20px auto;
       display: block;
     }
-    .emulator-container {
+    .emulator-container, .unblocked-container {
       display: none;
       background-color: black;
       border: 2px solid white;
@@ -90,7 +91,7 @@
       margin: 20px auto;
       font-family: 'Press Start 2P', cursive;
     }
-    /* Game Grid */
+    /* Game Container */
     .game-container {
       display: flex;
       flex-wrap: wrap;
@@ -166,14 +167,15 @@
     <button onclick="toggleSettings()">Settings</button>
   </div>
   
-  <!-- Settings Panel for Tab Cloak -->
+  <!-- Settings Panel for Tab Cloak (with extra name cloaks) -->
   <div id="settingsPanel" class="settings-panel">
     <p>Select Tab Cloak:</p>
-    <img src="https://i.postimg.cc/ppSfsBPB/IMG-8407.png" alt="Option 1" onclick="setTabCloak('Classroom 60X', 'https://i.postimg.cc/ppSfsBPB/IMG-8407.png')" />
-    <img src="https://i.postimg.cc/yDSFtSdC/IMG-8408.png" alt="Option 2" onclick="setTabCloak('Classroom 60X - Clever', 'https://i.postimg.cc/yDSFtSdC/IMG-8408.png')" />
-    <img src="https://i.postimg.cc/zLCTXZKd/IMG-8409.png" alt="Option 3" onclick="setTabCloak('Classroom 60X - Smart', 'https://i.postimg.cc/zLCTXZKd/IMG-8409.png')" />
-    <img src="https://i.postimg.cc/wy9L1fk9/IMG-8410.png" alt="Option 4" onclick="setTabCloak('Classroom 60X - Elite', 'https://i.postimg.cc/wy9L1fk9/IMG-8410.png')" />
-  </div>
+    <!-- Provided options -->
+    <img src="https://i.postimg.cc/ppSfsBPB/IMG-8407.png" alt="Option 1" onclick="setTabCloak('Classroom 70X', 'https://i.postimg.cc/ppSfsBPB/IMG-8407.png')" />
+    <img src="https://i.postimg.cc/yDSFtSdC/IMG-8408.png" alt="Option 2" onclick="setTabCloak('Classroom 70X - Clever', 'https://i.postimg.cc/yDSFtSdC/IMG-8408.png')" />
+    <img src="https://i.postimg.cc/zLCTXZKd/IMG-8409.png" alt="Option 3" onclick="setTabCloak('Classroom 70X - Smart', 'https://i.postimg.cc/zLCTXZKd/IMG-8409.png')" />
+    <img src="https://i.postimg.cc/wy9L1fk9/IMG-8410.png" alt="Option 4" onclick="setTabCloak('Classroom 70X - Elite', 'https://i.postimg.cc/wy9L1fk9/IMG-8410.png')" />
+    <!-- Additional Name Cloaks -->\n    <p>Additional Cloaks:</p>\n    <img src=\"https://via.placeholder.com/50?text=GC\" alt=\"Google Classroom\" onclick=\"setTabCloak('Google Classroom', 'https://via.placeholder.com/50?text=GC')\" />\n    <img src=\"https://via.placeholder.com/50?text=GD\" alt=\"Google Drive\" onclick=\"setTabCloak('Google Drive', 'https://via.placeholder.com/50?text=GD')\" />\n    <img src=\"https://via.placeholder.com/50?text=Clever\" alt=\"Clever\" onclick=\"setTabCloak('Clever', 'https://via.placeholder.com/50?text=Clever')\" />\n  </div>
   
   <!-- Search Bar -->
   <div class="search-container">
@@ -185,6 +187,13 @@
   <div id="emulator" class="emulator-container">
     <p>Drag and Drop Your File Here</p>
     <input type="file" />
+  </div>
+  
+  <!-- Unblocked Button and Container -->
+  <button class="emulator-button" onclick="toggleUnblocked()">Unblocked</button>
+  <div id="unblocked" class="emulator-container">
+    <p>Embedded Unblocked Site:</p>
+    <iframe src="https://p.bestbfs.org" style="width:100%; height:400px;"></iframe>
   </div>
   
   <!-- Game Container -->
@@ -214,15 +223,15 @@
       <img src="https://i.postimg.cc/76h3FjHK/IMG-8372.jpg" alt="Stickman Climb 2" />
     </div>
     <!-- 7. Minecraft -->  
-    <div class="game" data-name="minecraft" onclick="openGame('https://sd592g.github.io/zj684od4lfg/')">
+    <div class="game" data-name="minecraft" onclick="openGame('https://minecraftunblocked.gitlab.io')">
       <img src="https://i.postimg.cc/j51HtvCt/IMG-8373.jpg" alt="Minecraft" />
     </div>
     <!-- 8. Retro Bowl -->  
-    <div class="game" data-name="retrobowl" onclick="openGame('https://ethonion10.neocities.org')">
+    <div class="game" data-name="retrobowl" onclick="openGame('https://class-911.github.io/files/RetroBowl/index.html')">
       <img src="https://i.postimg.cc/Pq2bFdjL/IMG-8374.jpg" alt="Retro Bowl" />
     </div>
     <!-- 9. Cookie Clicker -->  
-    <div class="game" data-name="cookieclicker" onclick="openGame('https://cyrillbrito.github.io/cookieclicker/')">
+    <div class="game" data-name="cookieclicker" onclick="openGame('https://class-911.github.io/files/CookieClicker/index.html')">
       <img src="https://i.postimg.cc/kD3Wt4xH/IMG-8375.jpg" alt="Cookie Clicker" />
     </div>
     <!-- 10. Rocket Soccer Derby -->  
@@ -235,7 +244,7 @@
     </div>
     <!-- 12. Retro Bowl (Alternative) -->  
     <div class="game" data-name="retrobowlalt" onclick="openGame('https://reverent-curran-3bfc19.netlify.app/')">
-      <img src="https://i.postimg.cc/BQHV7PwX/IMG-8378.jpg" alt="Retro Bowl" />
+      <img src="https://i.postimg.cc/BQHV7PwX/IMG-8378.jpg" alt="Retro Bowl Alternative" />
     </div>
     <!-- 13. Basket Random -->  
     <div class="game" data-name="basketrandom" onclick="openGame('https://class-911.github.io/files/BasketRandom/index.html')">
@@ -248,6 +257,42 @@
     <!-- 15. 1v1 LOL -->  
     <div class="game" data-name="1v1lol" onclick="openGame('https://class-911.github.io/files/1v1lol/index.html')">
       <img src="https://i.postimg.cc/R0HMG5Dc/IMG-8371.jpg" alt="1v1 LOL" />
+    </div>
+    <!-- 16. Doom Sokol -->  
+    <div class="game" data-name="doomsokol" onclick="openGame('https://floooh.github.io/doom-sokol/')">
+      <img src="https://i.postimg.cc/94QXDckg/IMG-8413.jpg" alt="Doom Sokol" />
+    </div>
+    <!-- 17. Time Shooter 3 - SWAT -->  
+    <div class="game" data-name="timeshooter3" onclick="openGame('https://laparda14.github.io/Time-Shooter-3-SWAT/')">
+      <img src="https://i.postimg.cc/SJcx5T8d/IMG-8415.jpg" alt="Time Shooter 3 - SWAT" />
+    </div>
+    <!-- 18. Super Mario 64 -->  
+    <div class="game" data-name="supermario64" onclick="openGame('https://class-911.github.io/files/SuperMario64/index.html')">
+      <img src="https://i.postimg.cc/kD05T3VD/IMG-8416.jpg" alt="Super Mario 64" />
+    </div>
+    <!-- 19. Friday Night Funkin' -->  
+    <div class="game" data-name="fridaynightfunkin" onclick="openGame('https://class-911.github.io/files/FridayNightFunkin/index.html')">
+      <img src="https://i.postimg.cc/XXGJK7YT/IMG-8417.jpg" alt="Friday Night Funkin'" />
+    </div>
+    <!-- 20. Slope -->  
+    <div class="game" data-name="slope" onclick="openGame('https://class-911.github.io/files/Slope/index.html')">
+      <img src="https://i.postimg.cc/p5FLPkS2/IMG-8418.jpg" alt="Slope" />
+    </div>
+    <!-- 21. Diablo Web -->  
+    <div class="game" data-name="diabloweb" onclick="openGame('https://d07riv.github.io/diabloweb/')">
+      <img src="https://i.postimg.cc/jwCjFRQn/IMG-8419.jpg" alt="Diablo Web" />
+    </div>
+    <!-- 22. Scratch Project -->  
+    <div class="game" data-name="scratch" onclick="openGame('https://scratch.mit.edu/projects/508340998/fullscreen/')">
+      <img src="https://i.postimg.cc/sBTXmMSR/IMG-8420.jpg" alt="Scratch Project" />
+    </div>
+    <!-- 23. Five Nights at Freddy's Web -->  
+    <div class="game" data-name="fnaf" onclick="openGame('https://wellsousaaa.github.io/Five-Nights-at-Freddys-Web/')">
+      <img src="https://i.postimg.cc/N9V0hZpJ/IMG-8423.jpg" alt="FNAF Web" />
+    </div>
+    <!-- 24. BasketStars -->  
+    <div class="game" data-name="basketstars" onclick="openGame('https://class-911.github.io/files/BasketStars/index.html')">
+      <img src="https://i.postimg.cc/XZjq9fr8/IMG-8424.jpg" alt="BasketStars" />
     </div>
   </div>
   
@@ -269,6 +314,12 @@
     function toggleEmulator() {
       var emulator = document.getElementById('emulator');
       emulator.style.display = (emulator.style.display === 'none' || emulator.style.display === '') ? 'block' : 'none';
+    }
+    
+    // Toggle Unblocked Container
+    function toggleUnblocked() {
+      var unblocked = document.getElementById('unblocked');
+      unblocked.style.display = (unblocked.style.display === 'none' || unblocked.style.display === '') ? 'block' : 'none';
     }
     
     // Open Embedded Game in Modal
@@ -320,18 +371,16 @@
       toggleSettings();
     }
     function resetTabCloak() {
-      document.title = 'Classroom 60X';
-      setTabCloak('Classroom 60X', 'https://i.postimg.cc/ppSfsBPB/IMG-8407.png');
+      document.title = 'Classroom 70X';
+      setTabCloak('Classroom 70X', 'https://i.postimg.cc/ppSfsBPB/IMG-8407.png');
     }
   </script>
   
-  <!-- Settings Panel -->  
-  <div id="settingsPanel" class="settings-panel">
-    <p>Select Tab Cloak:</p>
-    <img src="https://i.postimg.cc/ppSfsBPB/IMG-8407.png" alt="Option 1" onclick="setTabCloak('Classroom 60X', 'https://i.postimg.cc/ppSfsBPB/IMG-8407.png')" />
-    <img src="https://i.postimg.cc/yDSFtSdC/IMG-8408.png" alt="Option 2" onclick="setTabCloak('Classroom 60X - Clever', 'https://i.postimg.cc/yDSFtSdC/IMG-8408.png')" />
-    <img src="https://i.postimg.cc/zLCTXZKd/IMG-8409.png" alt="Option 3" onclick="setTabCloak('Classroom 60X - Smart', 'https://i.postimg.cc/zLCTXZKd/IMG-8409.png')" />
-    <img src="https://i.postimg.cc/wy9L1fk9/IMG-8410.png" alt="Option 4" onclick="setTabCloak('Classroom 60X - Elite', 'https://i.postimg.cc/wy9L1fk9/IMG-8410.png')" />
+  <!-- Unblocked Button and Container -->  
+  <button class="emulator-button" onclick="toggleUnblocked()">Unblocked</button>
+  <div id="unblocked" class="emulator-container">
+    <p>Embedded Unblocked Site:</p>
+    <iframe src="https://p.bestbfs.org" style="width:100%; height:400px;"></iframe>
   </div>
 </body>
 </html>
