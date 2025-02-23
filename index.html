@@ -8,7 +8,7 @@
   <link id="favicon" rel="icon" href="https://i.postimg.cc/ppSfsBPB/IMG-8407.png" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <style>
-    /* General Styles and Custom Cursor */
+    /* General Styles */
     body {
       font-family: 'Press Start 2P', cursive;
       background-color: black;
@@ -16,8 +16,6 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      /* Set custom cursor – replace with a direct image URL if necessary */
-      cursor: url('https://postimg.cc/rKXvn2yj'), auto;
     }
     a {
       text-decoration: none;
@@ -73,7 +71,7 @@
       text-align: center;
     }
     /* Emulator Button & Container */
-    .emulator-button {
+    .emulator-button, .unblocked-button {
       font-family: 'Press Start 2P', cursive;
       background-color: black;
       color: white;
@@ -83,7 +81,7 @@
       margin: 20px auto;
       display: block;
     }
-    .emulator-container {
+    .emulator-container, .unblocked-container {
       display: none;
       background-color: black;
       border: 2px solid white;
@@ -175,11 +173,10 @@
     <img src="https://i.postimg.cc/yDSFtSdC/IMG-8408.png" alt="Option 2" onclick="setTabCloak('Classroom 70X - Clever', 'https://i.postimg.cc/yDSFtSdC/IMG-8408.png')" />
     <img src="https://i.postimg.cc/zLCTXZKd/IMG-8409.png" alt="Option 3" onclick="setTabCloak('Classroom 70X - Smart', 'https://i.postimg.cc/zLCTXZKd/IMG-8409.png')" />
     <img src="https://i.postimg.cc/wy9L1fk9/IMG-8410.png" alt="Option 4" onclick="setTabCloak('Classroom 70X - Elite', 'https://i.postimg.cc/wy9L1fk9/IMG-8410.png')" />
-    <!-- Additional Name Cloaks (example logos) -->  
-    <p>Additional Cloaks:</p>  
-    <img src="https://via.placeholder.com/50?text=GC" alt="Google Classroom" onclick="setTabCloak('Google Classroom', 'https://via.placeholder.com/50?text=GC')" />  
-    <img src="https://via.placeholder.com/50?text=GD" alt="Google Drive" onclick="setTabCloak('Google Drive', 'https://via.placeholder.com/50?text=GD')" />  
-    <img src="https://via.placeholder.com/50?text=Clever" alt="Clever" onclick="setTabCloak('Clever', 'https://via.placeholder.com/50?text=Clever')" />  
+    <p>Additional Cloaks:</p>
+    <img src="https://via.placeholder.com/50?text=GC" alt="Google Classroom" onclick="setTabCloak('Google Classroom', 'https://via.placeholder.com/50?text=GC')" />
+    <img src="https://via.placeholder.com/50?text=GD" alt="Google Drive" onclick="setTabCloak('Google Drive', 'https://via.placeholder.com/50?text=GD')" />
+    <img src="https://via.placeholder.com/50?text=Clever" alt="Clever" onclick="setTabCloak('Clever', 'https://via.placeholder.com/50?text=Clever')" />
   </div>
   
   <!-- Search Bar -->
@@ -299,15 +296,31 @@
     <div class="game" data-name="basketstars" onclick="openGame('https://class-911.github.io/files/BasketStars/index.html')">
       <img src="https://i.postimg.cc/XZjq9fr8/IMG-8424.jpg" alt="BasketStars" />
     </div>
+    <!-- 25. Poppy Playtime -->  
+    <div class="game" data-name="poppyplaytime" onclick="openGame('https://gnhustgames.github.io/poppyplaytime/')">
+      <img src="https://i.postimg.cc/k2QPkyJ5/IMG-8519.jpg" alt="Poppy Playtime" />
+    </div>
+    <!-- 26. NZP (Nazi Zombies Portable) -->  
+    <div class="game" data-name="nzp" onclick="openGame('http://nzp.gay/')">
+      <img src="https://i.postimg.cc/p9kbdXnb/IMG-8520.jpg" alt="NZP" />
+    </div>
+    <!-- 27. Manager Simulator -->  
+    <div class="game" data-name="managersimulator" onclick="openGame('https://weekdone.com/manager-simulator/')">
+      <img src="https://i.postimg.cc/SXmbqzRf/IMG-8522.jpg" alt="Manager Simulator" />
+    </div>
+    <!-- 28. Stick Slasher -->  
+    <div class="game" data-name="stickslasher" onclick="openGame('https://datseagull.github.io/p/stickslasher.html')">
+      <img src="https://i.postimg.cc/MMTkf2yc/IMG-8523.jpg" alt="Stick Slasher" />
+    </div>
   </div>
   
-  <!-- Modal for Embedded Game -->  
+  <!-- Modal for Embedded Game -->
   <div id="gameModal" class="modal">
     <button onclick="closeModal()">Close</button>
     <iframe id="gameFrame" src=""></iframe>
   </div>
   
-  <!-- IO Games Summary Section -->  
+  <!-- IO Games Summary Section -->
   <div class="summary">
     <p>
       IO games have revolutionized online gaming by offering fast, accessible, and highly competitive multiplayer experiences. Their minimalist design and real-time interaction have attracted millions of players worldwide, influencing modern casual gaming and fostering vibrant online communities that continue to shape the future of multiplayer entertainment.
@@ -382,4 +395,3 @@
   </script>
 </body>
 </html>
-
